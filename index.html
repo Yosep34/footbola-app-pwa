@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Footbola App</title>
+		<meta name="description" content="Footbola PWA App">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="theme-color" content="#3f51b5"/>
+		<link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/icons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-icon-180x180.png">
+		<link rel="apple-touch-icon" href="/icons/apple-icon.png">
+		<link rel="icon" type="image/x-icon" href="/icons/favicon.ico">
+		<link rel="preconnect" href="https://api.football-data.org" crossorigin>
+		<link rel="dns-prefetch" href="https://api.football-data.org">
+		<link rel="preconnect" href="https://upload.wikimedia.org" crossorigin>
+		<link rel="dns-prefetch" href="https://upload.wikimedia.org">
+		<link rel="preloader" href="/src/libs/materialize.min.css" as="style">
+		<link rel="stylesheet" href="/src/libs/materialize.min.css" media="print" onload="this.media='all'">
+		<noscript><link rel="stylesheet" href="/src/libs/materialize.min.css"></noscript>
+		<link rel="preloader" href="/src/css/page.css">
+		<link rel="stylesheet" href="/src/css/page.css">
+		<link rel="manifest" href="/manifest.json">
+		<link rel="preloader" href="https://fonts.googleapis.com/icon?family=Material+Icons" as="style">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	</head>
+	<body>
+		<header>
+			<nav class="top-nav">
+				<div class="container">
+					<div class="nav-wrapper">
+						<div class="row">
+							<div class="col s12">
+								<h2 class="header">Footbola</h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</nav>
+			<div class="container">
+				<a href="#" data-target="nav-mobile" class="top-nav sidenav-trigger full hide-on-large-only">
+					<i class="material-icons">menu</i>
+				</a>
+			</div>
+			<ul 
+			id="nav-mobile" 
+			class="sidenav sidenav-fixed"
+			style="overflow: 'auto'; transform: 'translateX(-105%)'" >
+				<li class="bold"><a href="#home" class="sidenav-close waves-effect waves-indigo">Home</a></li>
+				<li class="bold"><a href="#serieA" class="sidenav-close waves-effect waves-indigo">Serie A</a></li>
+				<li class="bold"><a href="#bundesliga" class="sidenav-close waves-effect waves-indigo">Bundesliga</a></li>
+				<li class="bold"><a href="#premiereleague" class="sidenav-close waves-effect waves-indigo">Premiere League</a></li>
+				<li class="bold"><a href="#primeradivision" class="sidenav-close waves-effect waves-indigo">Primera Division</a></li>
+				<li class="bold"><a href="#favorite" class="sidenav-close waves-effect waves-indigo">Your Favorite</a></li>
+			</ul>
+		</header>
+		<main id="content">
+			
+		</main>
+
+		<script src="src/js/serviceWorkerRegister.js"></script>
+		<script src="src/libs/materialize.min.js"></script>
+		<script async src="src/libs/lazysizes.min.js"></script>
+		<script src="src/data/teamData.js"></script>
+		<script src="src/data/favoriteData.js"></script>
+		<script async src="src/services/idb.js" ></script>
+		<script src="src/services/dbController.js"></script>
+		<script src="src/js/main.js"></script>
+	</body>
+</html>

@@ -1,0 +1,134 @@
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: 500;
+  src: url(/fonts/FiraSans-Medium.ttf);
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Fira Sans';
+  font-weight: normal;
+  src: url(/fonts/FiraSans-Regular.ttf);
+  font-display: swap;
+}
+
+* {
+	font-family: 'Fira Sans', sans-serif;
+}
+
+header, main {
+	padding-left: 300px;
+}
+
+nav .header {
+	color: indigo !important;
+}
+
+nav.top-nav {
+	height: 110px !important;
+	background-color: transparent !important;
+	box-shadow: none;
+	border-bottom: 1px solid rgba(0,0,0,0.14);
+	background-color: transparent;
+}
+
+a.sidenav-trigger.top-nav {
+	position: absolute;
+	text-align: center;
+	height: 48px;
+	width: 48px;
+	top: 32px;
+	color: indigo;
+	font-size: 36px;
+	z-index: 2;
+}
+
+a.sidenav-trigger.top-nav i {
+	font-size: 32px;
+}
+
+.banner {
+	width: 90%;
+	margin: 0.5em auto;
+	padding: 0 .75rem;
+	border-radius: 20px;
+	box-shadow: none;
+}
+
+.banner-logo {
+	padding: 24px;
+	margin: auto;
+	height: auto !important;
+	width: 300px !important;
+}
+
+.card-image {
+	padding: 24px ;
+	margin-top: 1.94667rem ;
+}
+
+.league {
+	margin-top: 0 !important;
+}
+
+.standings {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.team-content {
+	padding:24px 24px 10px 0;
+}
+
+.team-card {
+	border-radius: 20px;
+	box-shadow: none;
+	border: 1px solid rgba(0, 0, 0, 0.192);
+}
+
+.team-logo {
+	height: 160px;
+}
+
+.badge {
+	border-radius: 20px;
+}
+
+
+@media only screen and (max-width: 600px) {
+	.team-logo {
+		height: 80px;
+	}
+	.banner {
+		width: 100%;
+		margin: 0 auto 1.5em auto;
+		border-radius: 0 0 0 20px;
+	}
+	.standings {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 992px) {
+	header, main {
+		padding-left: 0;
+	}
+	nav .header {
+		text-align: center;
+	}
+	nav .nav-wrapper {
+		text-align: center;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	.container {
+		width: 90% !important;
+	}
+	.standings {
+		width: 70%;
+	}
+}
+
+
+

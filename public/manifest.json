@@ -1,0 +1,36 @@
+{
+  "short_name": "Footbola App",
+	"name": "Create Footbola PWA App",
+	"start_url": "/",
+  "display": "standalone",
+  "theme_color": "#3f51b5",
+	"background_color": "#3f51b5",
+	"gcm_sender_id" : "353025492412",
+  "icons": [
+		{
+      "src": "icons/favicon.ico",
+      "sizes": "16x16",
+      "type": "image/x-icon"
+		},
+    {
+      "src": "icons/logo96.png",
+			"type": "image/png",
+			"sizes": "96x96"
+		},
+		{
+			"src": "icons/logo128.png",
+			"type": "image/png",
+			"sizes": "128x128"
+		},
+    {
+      "src": "icons/logo192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/logo512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
