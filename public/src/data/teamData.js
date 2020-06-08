@@ -39,7 +39,9 @@ const getSerieA = () => {
 	};
 	fetchAPI(serieA)
 		.then(data => {
-			showTeams(data);
+			setTimeout(() => {
+				showTeams(data);
+			}, 1000)
 		})
 		.catch(error => {
 			console.log(error);
@@ -59,7 +61,9 @@ const getBundesligaLeague = () => {
 	};
 	fetchAPI(bundesliga)
 		.then(data => {
-			showTeams(data);
+			setTimeout(() => {
+				showTeams(data);
+			}, 1000)
 		})
 		.catch(error => {
 			console.log(error);
@@ -79,7 +83,9 @@ const getPremiereLeague = () => {
 	};
 	fetchAPI(premiereLeague)
 		.then(data => {
-			showTeams(data);
+			setTimeout(() => {
+				showTeams(data);
+			}, 1000)
 		})
 		.catch(error => {
 			console.log(error);
@@ -99,7 +105,9 @@ const getPrimeraDivisionLeague = () => {
 	};
 	fetchAPI(primeraDivision)
 		.then(data => {
-			showTeams(data);
+			setTimeout(() => {
+				showTeams(data);
+			}, 1000)
 		})
 		.catch(error => {
 			console.log(error);
@@ -111,15 +119,17 @@ const showTeams = (data) => {
 	const competition = data.competition;
 	const teams = data.teams;
 	const updated = new Date(competition.lastUpdated).toDateString();
+	
+	// loadingElement = document.getElementById("loading");
 
 	bannerElement.innerHTML = `
-		<span class="card-title truncate">${competition.name}</span>
-		<p>
-			<span>Last Updated</span>
-				<b>${updated}</b>
-			<span class="badge indigo white-text">${competition.area.name}</span>
-		</p>
-	`
+	<span class="card-title truncate">${competition.name}</span>
+	<p>
+		<span>Last Updated</span>
+			<b>${updated}</b>
+		<span class="badge indigo white-text">${competition.area.name}</span>
+	</p>
+`
 	teamsElement.innerHTML = `
 	${teams.map((item, index) => {
 		return `
@@ -128,7 +138,8 @@ const showTeams = (data) => {
 				<div class="card-image">
 					<img 
 						class="team-logo lazyload"
-						src="${item.crestUrl.replace(/^http:\/\//i, 'https://')}"
+						src="/assets/football.png"
+						data-src="${item.crestUrl.replace(/^http:\/\//i, 'https://')}"
 						alt="${item.name} logo" 
 						onerror="this.src = '/icons/logo192.png'"
 					/>
@@ -170,6 +181,7 @@ const showTeams = (data) => {
 		}).join("")
 	}
 	`
+	
 	checkFavorite(teams);
 	initFavBtn(teams);
 };
@@ -191,7 +203,6 @@ const checkFavorite = async () => {
 const initFavBtn = (data) => {
 	Array.from(document.querySelectorAll('#favBtn')).forEach(element => {
 		element.addEventListener('click', async (event) => {
-			console.log(event.target)
 			const attrValue = element.getAttribute('data-id');
 			const team = data.find(t => t.id === Number(attrValue));
 			const db = new DBService();

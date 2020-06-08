@@ -24,7 +24,6 @@ const showFavorite = (database) => {
 	let favoritesElement = document.getElementById('showFavorites');
 	let bannerElement = document.getElementById('bannerContent');
 	const totalFavorite = `${database.length} team${database.length > 1 ? 's' : ''}`
-
 	bannerElement.innerHTML = `
 	<span class="card-title truncate">Favorited Teams</span>
 		<p>
@@ -32,7 +31,23 @@ const showFavorite = (database) => {
 				<b>${totalFavorite}</b>
 		</p>`
 
-	favoritesElement.innerHTML = `
+	favoritesElement.innerHTML = '';
+	if(database.length == 0) {
+		favoritesElement.innerHTML += `
+			<div class="card banner">
+				<div class="card-image">
+					<a href='https://pngtree.com/so/404'>
+					<img 
+					src="/assets/not_found.png" 
+					class="lazyload" 
+					alt="not found"
+					style="border-radius: 20%" />
+					</a>
+				</div>
+			</div>
+			`
+	} else  {
+		favoritesElement.innerHTML += `
 	${database.map((item, index) => {
 		return `
 			<div key="${index}">
@@ -40,7 +55,8 @@ const showFavorite = (database) => {
 					<div class="card-image">
 						<img 
 							class="team-logo lazyload"
-							src="${item.crestUrl.replace(/^http:\/\//i, 'https://')}"
+							src="football.png"
+							data-src="${item.crestUrl.replace(/^http:\/\//i, 'https://')}"
 							alt="${item.name} logo" 
 						/>
 					</div>
@@ -80,6 +96,8 @@ const showFavorite = (database) => {
 		`}).join("")
 	}
 	`
+	}
+	
 	initDeleteTeam(database);
 };
 const initDeleteTeam= (data) => {
@@ -93,12 +111,8 @@ const initDeleteTeam= (data) => {
 			M.toast({
 				html: `${team.shortName} deleted from favorite`, 
 				classes: 'rounded',
-				completeCallback: function() {
-					setTimeout(() => {
-						getFavoriteTeams();
-					}, 1000);
-				}
 				});
+			getFavoriteTeams();
 		})
 	})
 }
