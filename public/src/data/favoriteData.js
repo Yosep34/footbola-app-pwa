@@ -31,14 +31,13 @@ const showFavorite = (database) => {
 				<b>${totalFavorite}</b>
 		</p>`
 
-	favoritesElement.innerHTML = '';
 	if(database.length == 0) {
-		favoritesElement.innerHTML += `
+		favoritesElement.innerHTML = `
 			<div class="card banner">
 				<div class="card-image">
 					<a href='https://pngtree.com/so/404'>
 					<img 
-					src="/assets/not_found.png" 
+					src="../assets/not_found.png" 
 					class="lazyload" 
 					alt="not found"
 					style="border-radius: 20%" />
@@ -47,7 +46,7 @@ const showFavorite = (database) => {
 			</div>
 			`
 	} else  {
-		favoritesElement.innerHTML += `
+		favoritesElement.innerHTML = `
 	${database.map((item, index) => {
 		return `
 			<div key="${index}">
@@ -55,7 +54,7 @@ const showFavorite = (database) => {
 					<div class="card-image">
 						<img 
 							class="team-logo lazyload"
-							src="football.png"
+							src="../assets/football.png"
 							data-src="${item.crestUrl.replace(/^http:\/\//i, 'https://')}"
 							alt="${item.name} logo" 
 						/>

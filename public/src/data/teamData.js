@@ -138,7 +138,7 @@ const showTeams = (data) => {
 				<div class="card-image">
 					<img 
 						class="team-logo lazyload"
-						src="/assets/football.png"
+						src="../assets/football.png"
 						data-src="${item.crestUrl.replace(/^http:\/\//i, 'https://')}"
 						alt="${item.name} logo" 
 						onerror="this.src = '/icons/logo192.png'"
